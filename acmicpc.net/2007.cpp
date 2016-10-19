@@ -2,7 +2,7 @@
 
 // Initially I thought I need another function to return the days of the month according to
 // value of month. In terms of modularity, first answer is better than latter one, but later one
-// is more compact, and simple as a algorithm problem. In production, I'll use first one.
+// is more compact and simple as a algorithm problem. In production, I'll consider to use first one.
 
 // # Problem
 
