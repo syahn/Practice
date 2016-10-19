@@ -6,7 +6,6 @@
 
 // # Answer
 
-
 // # Initial version
 
 
