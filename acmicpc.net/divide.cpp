@@ -1,5 +1,7 @@
 // # Reflection
-
+// 
+// It took a while to solve this problem though it's quite simple. I thought like
+// only last two digits can increase. It was fault.
 
 // # Problem
 
@@ -24,16 +26,24 @@
 using namespace std;
 
 int main() {
-	int n, f, first=0, second=0, newNum=1;
+	int n, f;
 	cin >> n >> f;
-	n /= 100;
-	while(newNum % f){
-		newNum = n * 100 + second*10 + first ;
-		if(!(++first % 10)) second++;
-	}
-  cout << (newNum / 10) % 10 << newNum % 10 << endl;
-
+	int newNum = n/100*100 ;
+	while(newNum % f) newNum++;
+  cout <<(newNum / 10) % 10 << newNum % 10 << endl;
   return 0;
 }
 
 // # Improved version
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n, f;
+	cin >> n >> f;
+	n = n/100*100 ;
+	while(n % f) n++;
+  cout <<(n / 10) % 10 << n % 10;
+  return 0;
+}
