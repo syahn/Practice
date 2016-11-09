@@ -1,6 +1,10 @@
 
 // # Reflection
 
+// This was the first time I tried to use stack in real problem. Before this problem,
+// I only learned how to make or implement the data structure in the class.
+// From this problem, I got to know if I want to store strings sequencely, I don't
+// need to store those in the array or vector, but just add those on one string.
 
 // # Problem
 
@@ -84,3 +88,60 @@ int main() {
 
 
 // # Improved version
+
+#include <iostream>
+#include <cstdio>
+#include <stack>
+#include <list>
+#include <utility>
+#include <vector>
+#include <string>
+using namespace std;
+
+stack<int> s;
+vector<int> v;
+string output;
+int log =0;
+
+int num, val;
+int main() {
+	scanf("%d", &num);
+	for(int i=0; i<num; ++i){
+		scanf("%d", &val);
+		v.push_back(val);
+	}
+	for(int j=1; j<=num; ++j){
+		int item = v[j-1];
+		if(s.empty()){
+            for(int k=log+1; item >= k; k++) {
+                s.push(k);
+                output+="+\n";
+                log = k;
+            }
+			s.pop();
+            output+="-\n";
+        } else {
+            if(item == s.top()){
+				s.pop();
+                output+="-\n";
+			}
+            else if(item > s.top()) {
+                if(log < num){
+                    for(int k=log+1; item >= k; k++){
+                        s.push(k);
+                        output+="+\n";
+                        log=k;
+                    }
+                    s.pop();
+                    output+="-\n";
+                }
+			} else if(item < s.top()){
+				cout << "NO";
+				return 0;
+			}
+		}
+
+	}
+    cout << output;
+	return 0;
+}
