@@ -1,10 +1,3 @@
-#Analysis
-
-A. Best-case: Ω()
-B. Average-case: O()
-C. Worst-case: О()
-
-
 #Pseudocode
 
 time: O(1)

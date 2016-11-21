@@ -6,7 +6,6 @@ C. Worst-case: О(nlogn)
 
 - T(n) = 0(1) if n=1
        = 2T(n/2) + 0(n) if n>1
-- ,
 
 
 #Pseudocode

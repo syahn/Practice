@@ -33,6 +33,6 @@ Build-Max-Heap(A, n)
 
 Heapsort(A, n)
   Build-Max-Heap(A, n)
-  for i <- n downto 2
+  for i <- n downto 2 // root 제외
     do exchange A[1] <-> A[i]
       Max-Heapify(A, 1, i-1)
