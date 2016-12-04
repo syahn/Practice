@@ -1,6 +1,7 @@
 // # Reflection
 
-// - Too trivial
+// - trivial, but good for practice rounding off to nearest integer.
+// - floor + 0.5 is great solution for rounding to nearest integer.
 
 // # Problem
 
@@ -19,12 +20,13 @@
 // # Initial solution
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 int main(){
     double mealCost, tipPercent, taxPercent;
     cin >> mealCost >> tipPercent >> taxPercent;
-    int sum = mealCost + mealCost*tipPercent/100 + mealCost*taxPercent/100;
-    cout << "The total meal cost is "<<sum<<" dollars.";
+    int sum = floor(mealCost + mealCost*tipPercent/100 + mealCost*taxPercent/100 + 0.5);
+    cout << "The total meal cost is "<< sum <<" dollars.";
 }
 
 // # Improved solution
