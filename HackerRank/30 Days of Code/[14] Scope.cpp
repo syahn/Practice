@@ -2,14 +2,11 @@
 
 
 
-
 // # Problem
 
 
 
-
 // # Initial solution
-
 
 
 
