@@ -1,6 +1,7 @@
 // # Reflection
 
-
+// - Be careful when using cin and getline sequencially. Note to using cin.ignore()
+// - Using queue was a definite overkill. 
 
 // # Problem
 
@@ -124,3 +125,51 @@ int main() {
 
 
 // # Improved solution
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <stack>
+#include <queue>
+#include <string>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+bool isOpen(char c){
+    return c == '(' || c == '[' || c=='{';
+}
+
+bool setCheck(char a, char b){
+    if(a=='(' && b==')') return true;
+    else if(a=='{' && b=='}') return true;
+    else if(a=='[' &&b==']') return true;
+    else return false;
+}
+
+int main() {
+    int n;
+    string val;
+    scanf("%d", &n);
+    cin.ignore();
+    for(int i=0; i<n; ++i){
+        stack<char> s;
+        bool isBal = true;
+        getline(cin, val);
+        for (char c:val){
+            if(isOpen(c)) {
+                s.push(c);
+            }
+            else if(!isOpen(c)){
+                if(s.empty() || !setCheck(c,s.top())){
+                    isBal = false;
+                    break;
+                } else s.pop();
+            }
+            isBal = s.empty() ? true : false;
+        }
+        if(isBal) cout << "YES" << endl;
+        else cout << "NO" << endl;
+    }
+    return 0;
+}
