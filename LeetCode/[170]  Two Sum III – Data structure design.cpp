@@ -1,6 +1,6 @@
 // 1. Reflection
 
-- There are 3 different approaches to solve this in different space and time complexity.
+// - There are 3 different approaches to solve this in different space and time complexity.
 
 
 // 2. Problem
