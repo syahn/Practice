@@ -1,14 +1,14 @@
 // 1. Reflection
 
- - I didn't take account into whole possible cases. Next time, consider that too.
- - I should be able to solve it without using substr
+ // - I didn't take account into whole possible cases. Next time, consider that too.
+ // - I should be able to solve it without using substr
 
 
 // 2. Problem
 
 // Implement strStr().
 //
-// Returns the index of the first occurrence of needle in haystack, or -1 
+// Returns the index of the first occurrence of needle in haystack, or -1
 // if needle is not part of haystack.
 
 // 3. Initial solution( complexity: time=>O(nm) space=>O(1))
