@@ -1,9 +1,9 @@
 // 1. Reflection
 
-- I failed to solve it. I have solved this before. 
-- I came up with Initial solution approach, but used vector and I couldn't pass the
-  judgement.
-- Improved one is really beauty of recursion
+// - I failed to solve it. I have solved this before.
+// - I came up with Initial solution approach, but used vector and I couldn't pass the
+//   judgement.
+// - Improved one is really beauty of recursion
 
 // 2. Problem
 
