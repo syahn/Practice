@@ -53,11 +53,14 @@ int minDepth(TreeNode* root) {
     Q.push(root);
     int i = 0;
     while (!Q.empty()) {
-        TreeNode* rt = Q.front();
-        if (rt->left) Q.push(rt->left);
-        if (rt->right) Q.push(rt->right);
-        Q.pop();
-        if (rt->left==NULL && rt->right==NULL) return i;
+        i++;
+        int k = Q.size();
+        for (int j=0; j<k; j++) {
+            TreeNode* rt = Q.front();
+            if (rt->left) Q.push(rt->left);
+            if (rt->right) Q.push(rt->right);
+            Q.pop();
+            if (rt->left==NULL && rt->right==NULL) return i;
         }
     }
     return -1; //For the compiler thing. The code never runs here.
@@ -65,21 +68,20 @@ int minDepth(TreeNode* root) {
 
 int minDepth(TreeNode* root) {
     if (root == NULL) return 0;
-queue<TreeNode*> Q;
-Q.push(root);
-TreeNode *rightMost = root;
-int depth = 1;
-while (!Q.empty()) {
-    TreeNode* rt = Q.front();
-    Q.pop();
-    if (rt->left==NULL && rt->right==NULL) break;
-    if (rt->left) Q.push(rt->left);
-    if (rt->right) Q.push(rt->right);
-    if (rt == rightMost) {
-     depth++;
-     rightMost = (rt->right != NULL) ? rt->right : rt->left;
+    queue<TreeNode*> Q;
+    Q.push(root);
+    TreeNode *rightMost = root;
+    int depth = 1;
+    while (!Q.empty()) {
+        TreeNode* rt = Q.front();
+        Q.pop();
+        if (rt->left==NULL && rt->right==NULL) break;
+        if (rt->left) Q.push(rt->left);
+        if (rt->right) Q.push(rt->right);
+        if (rt == rightMost) {
+         depth++;
+         rightMost = (rt->right != NULL) ? rt->right : rt->left;
+        }
     }
-}
-
-return depth; //For the compiler thing. The code never runs here.
+    return depth; //For the compiler thing. The code never runs here.
 }
