@@ -1,6 +1,6 @@
 // 1. Reflection
 
-// - Solved it. 
+// - Solved it.
 // - Be careful dealing with changing index.
 
 // 2. Problem
@@ -21,11 +21,11 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var moveZeroes = function(nums) {
-  for(let i=0, j=0; i<nums.length; i++){
-      if(nums[j] === 0){
-          nums.splice(j, 1);
-          nums.push(0);
-      } else j++;
+  for (let i = 0, j = 0; i < nums.length; i++) {
+    if (nums[j] === 0) {
+      nums.splice(j, 1);
+      nums.push(0);
+    } else j++;
   }
 };
 

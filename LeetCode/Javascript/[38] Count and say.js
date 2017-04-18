@@ -1,6 +1,6 @@
 // 1. Reflection
 
-// - Solved. 
+// - Solved.
 
 // 2. Problem
 
@@ -20,53 +20,63 @@
  * @param {number} n
  * @return {string}
  */
- //142ms
+//142ms
 var countAndSay = function(n) {
-    let seq = '1', count = 1, ret='';
-    for(let k=0,i=0; i<n-1; i++, k=0, count=1, seq = ret, ret='') {
-        while(k < seq.length) {
-            while(seq[k+1] && seq[k] === seq[k+1]) count++, k++;
-            if(!seq[k+1]) {
-                ret += count.toString() + seq[k];
-                break;
-            }
-            if(seq[k] !== seq[k+1]) {
-                ret += count.toString() + seq[k++];
-            }
-            count=1;
-        }
+  let seq = "1", count = 1, ret = "";
+  for (
+    let k = 0, i = 0;
+    i < n - 1;
+    i++, (k = 0), (count = 1), (seq = ret), (ret = "")
+  ) {
+    while (k < seq.length) {
+      while (seq[k + 1] && seq[k] === seq[k + 1])
+        count++, k++;
+      if (!seq[k + 1]) {
+        ret += count.toString() + seq[k];
+        break;
+      }
+      if (seq[k] !== seq[k + 1]) {
+        ret += count.toString() + seq[k++];
+      }
+      count = 1;
     }
-    return seq;
+  }
+  return seq;
 };
-
 
 /**
  * @param {number} n
  * @return {string}
  */
- //92ms
+//92ms
 var countAndSay = function(n) {
-    let seq = '1', count = 1, ret='';
-    for(let k=0,i=0; i<n-1; i++, k=0, count=1, seq = ret, ret='') {
-        while(k < seq.length) {
-            while(seq[k+1] && seq[k] === seq[k+1]) count++, k++;
-            if(seq[k] !== seq[k+1]) ret += count.toString() + seq[k++];
-            count=1;
-        }
+  let seq = "1", count = 1, ret = "";
+  for (
+    let k = 0, i = 0;
+    i < n - 1;
+    i++, (k = 0), (count = 1), (seq = ret), (ret = "")
+  ) {
+    while (k < seq.length) {
+      while (seq[k + 1] && seq[k] === seq[k + 1])
+        count++, k++;
+      if (seq[k] !== seq[k + 1]) ret += count.toString() + seq[k++];
+      count = 1;
     }
-    return seq;
+  }
+  return seq;
 };
 
 var countAndSay = function(n) {
-    let seq = '1', count = 1, ret='';
-    for(let k=0; --n; k=0, count=1, seq=ret, ret='') {
-        while(k < seq.length) {
-            while(seq[k+1] && seq[k] === seq[k+1]) count++, k++;
-            if(seq[k] !== seq[k+1]) ret += count.toString() + seq[k++];
-            count=1;
-        }
+  let seq = "1", count = 1, ret = "";
+  for (let k = 0; --n; (k = 0), (count = 1), (seq = ret), (ret = "")) {
+    while (k < seq.length) {
+      while (seq[k + 1] && seq[k] === seq[k + 1])
+        count++, k++;
+      if (seq[k] !== seq[k + 1]) ret += count.toString() + seq[k++];
+      count = 1;
     }
-    return seq;
+  }
+  return seq;
 };
 
 // 4. Improved solution( complexity: time=>O() space=>O() )

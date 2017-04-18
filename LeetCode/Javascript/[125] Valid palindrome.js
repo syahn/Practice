@@ -26,50 +26,50 @@
  * @return {boolean}
  */
 
- // 265ms
+// 265ms
 var isPalindrome = function(s) {
-    s = s.toLowerCase().split('').filter(e => {
-        const code = e.charCodeAt(0);
-        return code >= 97 && code <= 123 || code >= 48 && code <= 57;
-    });
-    const forward = s.join('');
-    const backward = s.reverse().join('');
-    return forward === backward;
+  s = s.toLowerCase().split("").filter(e => {
+    const code = e.charCodeAt(0);
+    return (code >= 97 && code <= 123) || (code >= 48 && code <= 57);
+  });
+  const forward = s.join("");
+  const backward = s.reverse().join("");
+  return forward === backward;
 };
 
 // 4. Improved solution( complexity: time=>O() space=>O() )
 
 // 189ms
 var isPalindrome = function(s) {
-  var strippedString = s.replace(/\W/g, '');
-  var reversedString = strippedString.split('').reverse().join('');
+  var strippedString = s.replace(/\W/g, "");
+  var reversedString = strippedString.split("").reverse().join("");
 
   return strippedString.toLowerCase() == reversedString.toLowerCase();
 };
 
 var isPalindrome = function(s) {
-    s = s.toLowerCase();
-    var strippedString = s.replace(/\W/g, '');
-    var reversedString = strippedString.split('').reverse().join('');
+  s = s.toLowerCase();
+  var strippedString = s.replace(/\W/g, "");
+  var reversedString = strippedString.split("").reverse().join("");
 
-    return strippedString == reversedString;
+  return strippedString == reversedString;
 };
 
 // 136ms
 var isPalindrome = function(s) {
-    let first = 0, last = s.length - 1;
+  let first = 0, last = s.length - 1;
 
-    while(first < last) {
-        while(first < last && /\W/g.test(s[first])){
-            first++;
-        }
-        while(first < last && /\W/g.test(s[last])){
-            last--;
-        }
-        if(s[first].toLowerCase() !== s[last].toLowerCase()) {
-            return false;
-        }
-        first++, last--;
+  while (first < last) {
+    while (first < last && /\W/g.test(s[first])) {
+      first++;
     }
-    return true;
+    while (first < last && /\W/g.test(s[last])) {
+      last--;
+    }
+    if (s[first].toLowerCase() !== s[last].toLowerCase()) {
+      return false;
+    }
+    first++, last--;
+  }
+  return true;
 };

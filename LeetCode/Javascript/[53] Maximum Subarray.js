@@ -14,7 +14,6 @@
 
 // 3. Initial solution( complexity: time=>O() space=>O())
 
-
 // 4. Improved solution( complexity: time=>O(N) space=>O(1) )
 
 /**
@@ -22,11 +21,11 @@
  * @return {number}
  */
 var maxSubArray = function(nums) {
-    let ret = nums[0], sum = 0;
-    for(let i=0; i<nums.length; i++) {
-        sum += nums[i];
-        ret = Math.max(ret, sum);
-        sum = Math.max(sum, 0);
-    }
-    return ret;
+  let ret = nums[0], sum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+    ret = Math.max(ret, sum);
+    sum = Math.max(sum, 0);
+  }
+  return ret;
 };
