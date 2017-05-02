@@ -119,4 +119,67 @@ function ArrayList() {
     }
     return i;
   }
+
+  this.heapSort = function() {
+    let heapSize = array.length;
+    buildHeap(array);
+
+    while (heapSize > 1) {
+      heapSize--;
+      swap(array, 0, heapSize);
+      heapify(array, heapSize, 0);
+    }
+  }
+
+  var buildHeap = function(array) {
+    var heapSize = array.length;
+    for (let i = Math.floor(array.length / 2); i >= 0; i--) {
+      heapify(array, heapSize, i);
+    }
+  }
+
+  var heapify = function(array, heapSize, i) {
+    var left = i * 2 + 1,
+        right = i * 2 + 2,
+        largest = i;
+    if (left < heapSize && array[left] > array[largest]) {
+      largest = left;
+    }
+    if (right < heapSize && array[right] > array[largest]) {
+      largest = right;
+    }
+    if (largest !== i) {
+      swap(array, i, largest);
+      heapify(array, heapSize, largest);
+    }
+  }
+
+  this.sequentialSearch = function (item) {
+    for (let i=0; i<array.length; i++) {
+      if (item === array[i]) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  this.binarySearch = function (item) {
+    this.quickSort();
+
+    var low = 0,
+        high = array.length - 1,
+        mid, element;
+    while (low <= high) {
+      mid = Math.floor((low + high) / 2);
+      element = array[mid];
+      if (element < item) {
+        low = mid + 1;
+      } else if (element > item) {
+        high = mid - 1;
+      } else {
+        return mid;
+      }
+    }
+    return -1;
+  }
 }
