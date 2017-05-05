@@ -3,7 +3,6 @@
 // - Solved. 
 // - Remember to use Closure. 
 // - Seperate data from code. 
-
 // 2. Problem
 
 // This time we want to write calculations using functions and get the results. Let's have a look at some examples:
