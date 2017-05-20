@@ -1,10 +1,10 @@
-// 1. Reflection
+# Reflection
 
 
-// 2. Problem
+# Problem
 
 
-// 3. Initial solution( complexity: time=>O() space=>O())
+# Initial solution( complexity: time=>O() space=>O())
 
 
-// 4. Improved solution( complexity: time=>O() space=>O() )
+# Improved solution( complexity: time=>O() space=>O() )
