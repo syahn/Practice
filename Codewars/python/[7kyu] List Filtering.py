@@ -9,6 +9,8 @@
 
 // 3. Initial solution( complexity: time=>O() space=>O())
 
+def filter_list(l):
+  return [ i for i in l if i is not str(i)]
 
 
 // 4. Improved solution( complexity: time=>O() space=>O() )
