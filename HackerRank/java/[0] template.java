@@ -1,4 +1,4 @@
-//[1] Reflection
+// [1] Reflection
 
 // [2] Problem description
 
